@@ -1,0 +1,84 @@
+/* PALETA */
+:root {
+  --ml-yellow: #ffe600;
+  --ml-blue: #0054a6;
+  --ml-green: #00a86b;
+  --text-dark: #222;
+  --text-light: #555;
+  --bg-light: #f4f4f4;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background: var(--ml-yellow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text-dark);
+}
+
+.nav-links a {
+  margin-left: 18px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--ml-blue);
+}
+
+/* LAYOUT */
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--bg-light);
+}
+
+.layout-content {
+  flex: 1;
+  padding: 16px;
+}
+
+/* PRODUCT CARD ESTILO MERCADO LIBRE */
+.product-card {
+  background: white;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.product-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ml-blue);
+  margin-top: 8px;
+}
+
+/* MOBILE FIRST */
+@media (min-width: 800px) {
+  .layout-content {
+    max-width: 900px;
+    margin: auto;
+  }
+}

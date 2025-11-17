@@ -1,29 +1,20 @@
-import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import ListaProductos from "./pages/ListaProductos";
+import Productos from "./pages/Productos";
+import Rutas from "./pages/Rutas";
 
 function App() {
-  const [productos, setProductos] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:4000/productos")
-      .then((res) => res.json())
-      .then(setProductos);
-  }, []);
-
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Gestión Ventas Capilar 💇‍♀️</h1>
-      {productos.length === 0 ? (
-        <p>No hay productos cargados.</p>
-      ) : (
-        <ul>
-          {productos.map((p) => (
-            <li key={p.id}>
-              {p.nombre} — ${p.precio} ({p.stock} en stock)
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<ListaProductos />} />
+          <Route path="/productos" element={<Productos />} />
+          <Route path="/rutas" element={<Rutas />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
